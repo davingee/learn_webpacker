@@ -14,7 +14,7 @@ gem 'awesome_nested_set'
 gem 'friendly_id', '~> 5.1.0'
 gem 'addressable'
 gem 'browser'
-gem 'active_model_serializers', '~> 0.10.0'
+# gem 'active_model_serializers', '~> 0.10.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

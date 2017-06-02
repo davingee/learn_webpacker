@@ -24,11 +24,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_model_serializers (0.10.6)
-      actionpack (>= 4.1, < 6)
-      activemodel (>= 4.1, < 6)
-      case_transform (>= 0.2)
-      jsonapi-renderer (>= 0.1.1.beta1, < 0.2)
     activejob (5.1.1)
       activesupport (= 5.1.1)
       globalid (>= 0.3.6)
@@ -66,8 +61,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    case_transform (0.2)
-      activesupport
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
@@ -106,7 +99,6 @@ GEM
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2)
-    jsonapi-renderer (0.1.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -257,7 +249,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers (~> 0.10.0)
   acts-as-taggable-on (~> 4.0)
   addressable
   awesome_nested_set

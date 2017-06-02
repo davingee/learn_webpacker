@@ -9,7 +9,7 @@ import PropTypes  from 'prop-types'
 const Hello = props => (
   <div>
     Hello {props.name}!
-    <h1>Main</h1>
+    <h1>Main#Index</h1>
     <p>Find me in app/views/main/index.html.erb</p>
   </div>
 )
