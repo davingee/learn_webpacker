@@ -5,18 +5,17 @@ module ApiConcern
   included do
     before_action :log_request
     before_action :set_response
-    # before_action :authenticate_user_from_token!
-    # before_action :authenticate_api_v1_user!
-    
+    before_action :authenticate_user_from_token!
+    before_action :authenticate_api_v1_user!
   end
 
   def current_user
     current_api_v1_user
   end
 
-  def authenticate_user!
-    authenticate_api_v1_user!
-  end
+  # def authenticate_user!
+  #   authenticate_api_v1_user!
+  # end
 
   def log_request
     # REQUEST_LOG.info( {
@@ -50,14 +49,8 @@ module ApiConcern
     browser.device.tablet?
   end
 
-  def u_agent
+  def user_agent
     request.env['HTTP_USER_AGENT']
-  end
-
-  def set_response
-    response.headers['session_id']    = session_id
-    response.headers['visitor_id']    = visitor_id
-    response.headers['X-CSRF-Token']  = form_authenticity_token
   end
 
   def visitor_id
@@ -71,21 +64,36 @@ module ApiConcern
   private
 
     def browser
-      @browser ||= Browser.new(u_agent, accept_language: "en-us")
+      @browser ||= Browser.new(user_agent, accept_language: "en-us")
     end
 
     def authenticate_user_from_token!
+      # Token token=1_YEaaks8fscavxvx7p2z6
       credentials = request.headers['Authorization'].try(:gsub, 'Token token=', '')
       auth_token  = credentials.try(:split, '_').try(:last)
       id          = credentials.try(:split, '_').try(:first)
       user        = id && User.find(id)
       if user && Devise.secure_compare(user.authentication_token, auth_token)
         sign_in user, store: false
+      else
+        sign_out user
       end
     end
 
     def current_page
       @addressable ||= Addressable::URI.parse(request.original_url) rescue nil
+    end
+
+    def referer
+      @referer ||= Addressable::URI.parse(request.referer) rescue nil
+    end
+
+    def set_response
+      response.headers['Session-Id']    = session_id
+      response.headers['Visitor-Id']    = visitor_id
+      response.headers['X-CSRF-Token']  = form_authenticity_token
+      response.headers['Referer']       = referer
+      response.headers['Current-Page']  = current_page
     end
 
 end

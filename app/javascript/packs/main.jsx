@@ -17,7 +17,7 @@ const Hello = props => (
 Hello.defaultProps = {
   name: 'David'
 }
-
+//# https://labs.chiedo.com/blog/authenticating-your-reactjs-app-with-devise-no-extra-gems-needed/
 Hello.propTypes = {
   name: PropTypes.string
 }
