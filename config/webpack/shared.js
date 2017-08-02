@@ -15,6 +15,7 @@ const extensionGlob = `**/*{${settings.extensions.join(',')}}*`
 const entryPath = join(settings.source_path, settings.source_entry_path)
 const packPaths = sync(join(entryPath, extensionGlob))
 
+const appConfig = require('./app-config.js')
 
 module.exports = {
   entry: packPaths.reduce(

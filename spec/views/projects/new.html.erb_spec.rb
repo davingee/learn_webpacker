@@ -1,0 +1,24 @@
+require 'rails_helper'
+
+RSpec.describe "projects/new", type: :view do
+  before(:each) do
+    assign(:project, Project.new(
+      :company_id => 1,
+      :name => "MyString",
+      :description => "MyText"
+    ))
+  end
+
+  it "renders new project form" do
+    render
+
+    assert_select "form[action=?][method=?]", projects_path, "post" do
+
+      assert_select "input[name=?]", "project[company_id]"
+
+      assert_select "input[name=?]", "project[name]"
+
+      assert_select "textarea[name=?]", "project[description]"
+    end
+  end
+end

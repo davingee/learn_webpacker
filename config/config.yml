@@ -1,0 +1,22 @@
+env: ~
+redis:
+  host: localhost
+  port: 6379
+
+company: 'LeadPoint, Inc.'
+address: '2045A S. Barrington Ave'
+Suite:   
+city: 'Los Angeles'
+state: 'CA'
+zip_code: '90025'
+
+# for allowing other clients to accept
+google_api:
+  client_id:                  1770982307-v1r75vg7m9p56vr14il6mfq72qftg7rn.apps.googleusercontent.com
+  client_secret:              URrQ8jpbxR1fQQroL_bXW4u3
+  refresh_token:              1/qQjQiR-CYzqRuWVyXXUxDcS24pu8RfculHggvq9Phys
+  ananlytics_refresh_token:   1/qQjQiR-CYzqRuWVyXXUxDcS24pu8RfculHggvq9Phys
+  developer_token:            w89ovGS23F2RNixWRY_dqA
+  access_token:               ya29..vQLRFGR75AV3oaWhqIcKUgwJSy1upGtivjX5qM7qQa2UHGsa-Fo4yn5DRKO6BiAyMw
+  version:                  v201409
+

@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
-  # root to: "main#index"
+  resources :bid_managements
+  resources :companies do 
+    resources :users 
+    resources :projects do 
+      resources :accounts
+    end
+  end
+
+  root to: "main#index"
+  devise_for :users
 
   namespace :api do
     namespace :v1 do

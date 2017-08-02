@@ -1,0 +1,5 @@
+env: staging
+redis:
+  host:       'db01.staging.creditcards.org'
+  port:       6379
+  password:   '59e948a0274c434b910200a60c23f447'

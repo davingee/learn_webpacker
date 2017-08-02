@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @account.name %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @account.account_id %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @account.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @account.password %>
+</p>
+
+<p>
+  <strong>Auth token:</strong>
+  <%= @account.auth_token %>
+</p>
+
+<p>
+  <strong>Developer token:</strong>
+  <%= @account.developer_token %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @account.client_id %>
+</p>
+
+<p>
+  <strong>Client secret:</strong>
+  <%= @account.client_secret %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

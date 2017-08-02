@@ -7,6 +7,7 @@ end
 
 gem 'devise'
 gem 'mechanize'
+gem 'nokogiri'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
@@ -14,6 +15,9 @@ gem 'awesome_nested_set'
 gem 'friendly_id', '~> 5.1.0'
 gem 'addressable'
 gem 'browser'
+# gem 'cancancan', '~> 2.0'
+gem "pundit"
+
 # gem 'active_model_serializers', '~> 0.10.0'
 
 
@@ -46,6 +50,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+group :test do
+  gem 'database_cleaner'
+  gem 'simplecov', :require => false
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -67,4 +77,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
